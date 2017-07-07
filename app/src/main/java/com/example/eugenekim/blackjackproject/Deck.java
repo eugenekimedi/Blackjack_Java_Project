@@ -22,4 +22,9 @@ public class Deck {
         }
         return numberOfCards;
     }
+
+    public void addCard(Card newCard){
+        int index = cardCount();
+        this.cards[index] = newCard;
+    }
 }

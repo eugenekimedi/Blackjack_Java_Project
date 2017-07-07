@@ -23,4 +23,10 @@ public class DeckTest {
     public void deckStartsEmpty() {
         assertEquals(0, deck.cardCount());
     }
+
+    @Test
+    public void canAddCard() {
+        deck.addCard(card);
+        assertEquals(1, deck.cardCount());
+    }
 }
