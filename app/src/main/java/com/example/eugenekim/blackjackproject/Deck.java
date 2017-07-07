@@ -1,5 +1,4 @@
 package com.example.eugenekim.blackjackproject;
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 /**
  * Created by eugenekim on 7/7/17.
@@ -34,7 +33,9 @@ public class Deck {
     }
 
     public Card getTop() {
-        return this.cards.get(0);
+        Card topCard = this.cards.get(0);
+        this.cards.remove(0);
+        return topCard;
     }
 
 

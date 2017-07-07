@@ -5,4 +5,9 @@ package com.example.eugenekim.blackjackproject;
  */
 
 public class Dealer extends Player{
+
+    public void dealCard(Deck deck, Player player) {
+        Card card = deck.getTop();
+        player.receiveCard(card);
+    }
 }
