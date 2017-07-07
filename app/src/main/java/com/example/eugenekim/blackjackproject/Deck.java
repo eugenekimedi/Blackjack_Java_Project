@@ -1,15 +1,16 @@
 package com.example.eugenekim.blackjackproject;
-
+import java.lang.reflect.Array;
+import java.util.ArrayList;
 /**
  * Created by eugenekim on 7/7/17.
  */
 
 public class Deck {
 
-    private Card[] cards;
+    private ArrayList<Card> cards;
 
     public Deck() {
-        this.cards = new Card[52];
+        this.cards = new ArrayList<>();
     }
 
     public int cardCount() {
@@ -23,23 +24,17 @@ public class Deck {
         return numberOfCards;
     }
 
-    public void addCard(Card newCard){
-        int index = cardCount();
-        this.cards[index] = newCard;
-    }
-
     public void setup(){
-        int i = 0;
         for (Suit suit : Suit.values()) {
             for (Rank rank : Rank.values()) {
-                cards[i] = new Card(rank, suit);
-                i++;
+                Card card = new Card(rank, suit);
+                this.cards.add(card);
             }
         }
     }
 
     public Card getTop() {
-        return this.cards[0];
+        return this.cards.get(0);
     }
 
 

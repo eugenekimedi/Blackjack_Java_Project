@@ -26,11 +26,6 @@ public class DeckTest {
         assertEquals(0, deck.cardCount());
     }
 
-    @Test
-    public void canAddCard() {
-        deck.addCard(card);
-        assertEquals(1, deck.cardCount());
-    }
 
     @Test
     public void canSetup() {
