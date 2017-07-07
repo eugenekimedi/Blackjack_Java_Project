@@ -21,4 +21,9 @@ public class CardTest {
     public void canGetRank(){
         assertEquals(Rank.TWO, card.getRank());
     }
+
+    @Test
+    public void canGetSuit(){
+        assertEquals(Suit.SPADES, card.getSuit());
+    }
 }
