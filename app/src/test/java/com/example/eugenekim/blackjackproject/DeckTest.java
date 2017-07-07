@@ -29,4 +29,10 @@ public class DeckTest {
         deck.addCard(card);
         assertEquals(1, deck.cardCount());
     }
+
+    @Test
+    public void canSetup() {
+        deck.setup();
+        assertEquals(52, deck.cardCount());
+    }
 }

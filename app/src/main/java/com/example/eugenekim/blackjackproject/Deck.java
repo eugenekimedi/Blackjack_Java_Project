@@ -27,4 +27,14 @@ public class Deck {
         int index = cardCount();
         this.cards[index] = newCard;
     }
+
+    public void setup(){
+        int i = 0;
+        for (Suit suit : Suit.values()) {
+            for (Rank rank : Rank.values()) {
+                cards[i] = new Card(rank, suit);
+                i++;
+            }
+        }
+    }
 }
