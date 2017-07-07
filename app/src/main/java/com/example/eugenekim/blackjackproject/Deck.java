@@ -37,4 +37,10 @@ public class Deck {
             }
         }
     }
+
+    public Card getTop() {
+        return this.cards[0];
+    }
+
+
 }

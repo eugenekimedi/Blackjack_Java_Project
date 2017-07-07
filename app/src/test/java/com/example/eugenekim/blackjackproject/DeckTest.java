@@ -2,6 +2,8 @@ package com.example.eugenekim.blackjackproject;
 
 import org.junit.Before;
 import org.junit.Test;
+
+import static junit.framework.Assert.assertTrue;
 import static org.junit.Assert.assertEquals;
 
 /**
@@ -35,4 +37,12 @@ public class DeckTest {
         deck.setup();
         assertEquals(52, deck.cardCount());
     }
+
+    @Test
+    public void canGetTop() {
+        deck.setup();
+        assertTrue(card.equals(deck.getTop()));
+    }
+
+
 }

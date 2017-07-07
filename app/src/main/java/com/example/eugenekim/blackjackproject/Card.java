@@ -20,4 +20,8 @@ public class Card {
     public Suit getSuit(){
         return this.suit;
     }
+
+    public boolean equals(Card otherCard) {
+        return rank == otherCard.getRank() && suit == otherCard.getSuit();
+    }
 }
