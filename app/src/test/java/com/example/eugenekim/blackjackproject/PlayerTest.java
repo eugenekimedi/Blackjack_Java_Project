@@ -12,11 +12,13 @@ public class PlayerTest {
 
     Player player;
     Card card;
+    Card card1;
 
     @Before
     public void before() {
         player = new Player();
         card = new Card(Rank.ACE, Suit.SPADES);
+        card1 = new Card(Rank.TWO, Suit.CLUBS);
     }
 
     @Test
@@ -27,6 +29,7 @@ public class PlayerTest {
     @Test
     public void canReceiveCard() {
         player.receiveCard(card);
-        assertEquals(1, player.cardCount());
+        player.receiveCard(card1);
+        assertEquals(2, player.cardCount());
     }
 }
