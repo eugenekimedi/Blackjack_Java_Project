@@ -1,5 +1,7 @@
 package com.example.eugenekim.blackjackproject;
 import java.util.ArrayList;
+import java.util.Collections;
+
 /**
  * Created by eugenekim on 7/7/17.
  */
@@ -38,5 +40,8 @@ public class Deck {
         return topCard;
     }
 
+    public void shuffle() {
+        Collections.shuffle(cards);
+    }
 
 }
