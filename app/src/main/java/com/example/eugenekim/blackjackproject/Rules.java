@@ -39,6 +39,9 @@ public class Rules {
         if (playerScore > dealerScore){
             return "player wins";
         }
-        return "player loses";
+        else if (playerScore == dealerScore){
+            return "draw";
+        }
+        return "dealer wins";
     }
 }

@@ -21,22 +21,37 @@ public class RulesTest {
         player = new Player();
         deck = new Deck();
         deck.setup();
-        dealer.dealCard(deck, dealer);
-        dealer.dealCard(deck, dealer);
-        dealer.dealCard(deck, player);
-        dealer.dealCard(deck, player);
     }
 
     @Test
     public void canCountValues(){
-        assertEquals(5, rules.countValues(dealer.getHand()));
-        assertEquals(9, rules.countValues(player.getHand()));
+        dealer.dealCard(deck, player);
+        dealer.dealCard(deck, player);
+        dealer.dealCard(deck, dealer);
+        dealer.dealCard(deck, dealer);
+        assertEquals(5, rules.countValues(player.getHand()));
+        assertEquals(9, rules.countValues(dealer.getHand()));
     }
 
     @Test
-    public void canCompareHands(){
+    public void canCompareHandsPlayerWins(){
+        dealer.dealCard(deck, dealer);
+        dealer.dealCard(deck, dealer);
+        dealer.dealCard(deck, player);
+        dealer.dealCard(deck, player);
         int dealerScore = rules.countValues(dealer.getHand());
         int playerScore = rules.countValues(player.getHand());
         assertEquals("player wins", rules.compareHands(playerScore, dealerScore));
+    }
+
+    @Test
+    public void canCompareHandsDealerWins(){
+        dealer.dealCard(deck, player);
+        dealer.dealCard(deck, player);
+        dealer.dealCard(deck, dealer);
+        dealer.dealCard(deck, dealer);
+        int dealerScore = rules.countValues(dealer.getHand());
+        int playerScore = rules.countValues(player.getHand());
+        assertEquals("dealer wins", rules.compareHands(playerScore, dealerScore));
     }
 }
