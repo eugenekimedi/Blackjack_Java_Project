@@ -34,4 +34,11 @@ public class Rules {
         }
         return points;
     }
+
+    public String compareHands(int playerScore, int dealerScore){
+        if (playerScore > dealerScore){
+            return "player wins";
+        }
+        return "player loses";
+    }
 }
