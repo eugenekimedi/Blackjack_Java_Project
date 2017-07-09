@@ -27,7 +27,11 @@ public class Rules {
         rules.put(Rank.ACE, 11 );
     }
 
-//    public int countValues(){
-//        if {
-//    }
+    public int countValues(Card[] hand) {
+        int points = 0;
+        for (Card card : hand) {
+            points += rules.get(card.getRank());
+        }
+        return points;
+    }
 }
