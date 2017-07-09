@@ -21,12 +21,20 @@ public class RulesTest {
         player = new Player();
         deck = new Deck();
         deck.setup();
+        dealer.dealCard(deck, player);
+        dealer.dealCard(deck, player);
+        dealer.dealCard(deck, dealer);
+        dealer.dealCard(deck, dealer);
     }
 
     @Test
     public void canCountValues(){
-        dealer.dealCard(deck, player);
-        dealer.dealCard(deck, player);
         assertEquals(5, rules.countValues(player.getHand()));
+        assertEquals(9, rules.countValues(dealer.getHand()));
+    }
+
+    @Test
+    public void canCompareHands(){
+
     }
 }
