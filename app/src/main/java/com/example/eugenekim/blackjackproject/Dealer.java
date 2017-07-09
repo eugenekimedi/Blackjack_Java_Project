@@ -5,6 +5,10 @@ package com.example.eugenekim.blackjackproject;
  */
 
 public class Dealer extends Player{
+    private Deck deck;
+
+    public Dealer(){
+    }
 
     public void dealCard(Deck deck, Player player) {
         Card card = deck.getTop();

@@ -27,4 +27,8 @@ public class Player {
         int index = cardCount();
         this.hand[index] = newCard;
     }
+
+    public Card[] getHand(){
+        return this.hand;
+    }
 }
