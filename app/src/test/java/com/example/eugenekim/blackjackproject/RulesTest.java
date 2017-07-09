@@ -54,4 +54,15 @@ public class RulesTest {
         int playerScore = rules.countValues(player.getHand());
         assertEquals("dealer wins", rules.compareHands(playerScore, dealerScore));
     }
+
+    @Test
+    public void canCompareHandsDraw(){
+        dealer.dealCard(deck, player);
+        dealer.dealCard(deck, dealer);
+        dealer.dealCard(deck, dealer);
+        dealer.dealCard(deck, player);
+        int dealerScore = rules.countValues(dealer.getHand());
+        int playerScore = rules.countValues(player.getHand());
+        assertEquals("draw", rules.compareHands(playerScore, dealerScore));
+    }
 }
